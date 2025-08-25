@@ -1,39 +1,33 @@
 class Moribito < Formula
   desc "LDAP CLI Explorer - Interactive terminal-based LDAP client with TUI"
   homepage "https://github.com/ericschmar/moribito"
-  version "0.0.1"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/ericschmar/moribito/releases/download/v#{version}/ldap-cli-darwin-amd64"
-      sha256 "c7702359e5bf0abce0b0f30925a25325fda592d6a5855bffe329f752a29e44df"
+      url "https://github.com/ericschmar/moribito/releases/download/v#{version}/moribito-darwin-amd64"
+      sha256 "40d6b546fcee0040f1859384259c2b10cf26c9e49725a06148c050ae88291814"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/ericschmar/moribito/releases/download/v#{version}/ldap-cli-darwin-arm64"  
-      sha256 "85cdbb5dbeae72400eafd74c635280a5a8f631a0228945ba2631f0afd15f1497"
+      url "https://github.com/ericschmar/moribito/releases/download/v#{version}/moribito-darwin-arm64"  
+      sha256 "44aa11ae1493b8ef490bea01c99a4f18ba9930c340b2d571a97cc398446bce20"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/ericschmar/moribito/releases/download/v#{version}/ldap-cli-linux-amd64"
-      sha256 "59b142fcd3b1ac7398efffc62349fb4262cb71e28220ec01e82672294180fde8"
+      url "https://github.com/ericschmar/moribito/releases/download/v#{version}/moribito-linux-amd64"
+      sha256 "e3e56791b12af0c959aaa647bbb6aaa03e9b7bda3a23a328d4dfe5fb652b81ba"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ericschmar/moribito/releases/download/v#{version}/ldap-cli-linux-arm64"
-      sha256 "14c3592a5d1c8808733d6f0d4a6e1e72cb9555913f856499ae5d56fcb46bf013"
+      url "https://github.com/ericschmar/moribito/releases/download/v#{version}/moribito-linux-arm64"
+      sha256 "7b617a6e5e8bc446bd2869da21d87fe85990d5f147cb17d84136bc45f608f2a1"
     end
   end
 
   def install
-    # For v0.0.1, binaries are named ldap-cli-*
-    # For future versions, they should be named moribito-*
-    if version == "0.0.1"
-      bin.install "ldap-cli-#{OS.kernel_name.downcase}-#{Hardware::CPU.arch}" => "moribito"
-    else
-      bin.install "moribito-#{OS.kernel_name.downcase}-#{Hardware::CPU.arch}" => "moribito"
-    end
+    bin.install "moribito-#{OS.kernel_name.downcase}-#{Hardware::CPU.arch}" => "moribito"
   end
 
   test do
