@@ -10,7 +10,7 @@ class Moribito < Formula
 
   on_macos do
     url "https://github.com/ericschmar/moribito/releases/download/v0.2.6/moribito_Darwin_x86_64.tar.gz"
-    sha256 "08e77f530d2844c5336792ebfbf9cbc41b8fcae0d82da86c4874e5d75f3baa4e"
+    sha256 "4a9a07d01c88d39404da648f9670a0e58d088b5e80ff362daf3f5b307d75f971"
 
     def install
       bin.install "moribito"
@@ -30,7 +30,7 @@ class Moribito < Formula
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
       url "https://github.com/ericschmar/moribito/releases/download/v0.2.6/moribito_Linux_x86_64.tar.gz"
-      sha256 "ab674cc97691c1b887f410ec6f60e312907dbe2ed486a6e84e5b18c0f0f9845f"
+      sha256 "242051101d3ea8b842b16aee3d092d4a8217b3f40322f6bb36cbfb74c01ae186"
       def install
         bin.install "moribito"
       end
