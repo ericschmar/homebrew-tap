@@ -5,12 +5,12 @@
 class Moribito < Formula
   desc "LDAP CLI Explorer - Interactive terminal-based LDAP client with TUI"
   homepage "https://github.com/ericschmar/moribito"
-  version "0.2.5"
+  version "0.2.6"
   license "MIT"
 
   on_macos do
-    url "https://github.com/ericschmar/moribito/releases/download/v0.2.5/moribito_Darwin_x86_64.tar.gz"
-    sha256 "131f376b3b2cc17744036c061e0a8b88021b093e45191f7793ffe9dcee345c65"
+    url "https://github.com/ericschmar/moribito/releases/download/v0.2.6/moribito_Darwin_x86_64.tar.gz"
+    sha256 "08e77f530d2844c5336792ebfbf9cbc41b8fcae0d82da86c4874e5d75f3baa4e"
 
     def install
       bin.install "moribito"
@@ -29,8 +29,8 @@ class Moribito < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/ericschmar/moribito/releases/download/v0.2.5/moribito_Linux_x86_64.tar.gz"
-      sha256 "b8956756b66e887bbf65cdf876eb378728341d1423c302876574787ca6c030f1"
+      url "https://github.com/ericschmar/moribito/releases/download/v0.2.6/moribito_Linux_x86_64.tar.gz"
+      sha256 "ab674cc97691c1b887f410ec6f60e312907dbe2ed486a6e84e5b18c0f0f9845f"
       def install
         bin.install "moribito"
       end
